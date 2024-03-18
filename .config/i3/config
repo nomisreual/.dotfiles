@@ -204,3 +204,4 @@ bar {
 # Run wallpaper application on start:
 exec_always feh --bg-fill $HOME/Wallpapers/Ruffy_Dark.jpg
 exec_always xrandr --output DisplayPort-0  --mode 1920x1080 --rate 165.00
+exec_always picom --experimental-backends
