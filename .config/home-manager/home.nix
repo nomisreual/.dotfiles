@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # Allow unfree software:
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -8,6 +9,7 @@
     };
   };
 
+  # User account details:
   home.username = "simon";
   home.homeDirectory = "/home/simon";
   home.stateVersion = "24.05";
