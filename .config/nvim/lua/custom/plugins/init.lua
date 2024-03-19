@@ -16,4 +16,6 @@ return {
   },
   -- Dracula colorscheme
   { 'Mofiqul/dracula.nvim' },
+  -- TMUX navigator
+  { 'christoomey/vim-tmux-navigator' },
 }
