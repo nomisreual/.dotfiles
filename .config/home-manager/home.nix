@@ -42,6 +42,7 @@
     neofetch
     htop
     stow
+    starship
     (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
