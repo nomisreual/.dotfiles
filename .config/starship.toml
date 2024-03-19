@@ -97,53 +97,53 @@ format = '[[($all_status$ahead_behind )](fg:color_fg bg:color_purple)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [c]
 symbol = " "
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [php]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [java]
 symbol = " "
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [python]
 symbol = ""
-style = "bg:color_cyan"
-format = '[[ $symbol( $version) ](fg:color_fg bg:color_cyan)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $version) ](fg:color_fg bg:color_cl)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:color_bg"
-format = '[[ $symbol( $context) ](fg:color_fg bg:color_bg)]($style)'
+style = "bg:color_cl"
+format = '[[ $symbol( $context) ](fg:color_fg bg:color_cl)]($style)'
 
 [time]
 disabled = false
