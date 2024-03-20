@@ -43,6 +43,8 @@
     htop
     stow
     starship
+    ffcast # screenshot tool
+    slop # select region for screenshots e.g.
     (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
