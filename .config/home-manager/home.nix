@@ -43,6 +43,7 @@
     htop
     stow
     starship
+    nodejs_21
     (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
