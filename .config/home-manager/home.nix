@@ -44,6 +44,7 @@
     stow
     starship
     nodejs_21
+    lazygit
     (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
