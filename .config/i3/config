@@ -9,6 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Displays
+set $left DisplayPort-0
+set $right DisplayPort-1
+
+# Main modifier key
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -104,6 +109,18 @@ bindsym $mod+a focus parent
 # focus the child container
 # bindsym $mod+d focus child
 
+# Where each workspace should be placed:
+workspace $ws1 output $left
+workspace $ws2 output $left
+workspace $ws3 output $left
+workspace $ws4 output $left
+workspace $ws5 output $right
+workspace $ws6 output $right
+workspace $ws7 output $right
+workspace $ws8 output $right
+workspace $ws9 output $right
+workspace $ws10 output $right
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -140,6 +157,17 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move current workspace to the next output
+bindsym $mod+Shift+n move workspace to output next
+
+# switch focus to next output
+bindsym $mod+n focus output right
+
+# cycle between workspaces
+bindsym $mod+Tab workspace next_on_output
+# cycle backwards
+bindsym $mod+Shift+Tab workspace prev_on_output
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,9 +222,9 @@ client.background       #F8F8F2
 bar {
         status_command i3status --config ~/.config/i3status/i3status
         position top
-        output DisplayPort-0
-        output DisplayPort-1
-        tray_output DisplayPort-0
+        output $left
+        output $right
+        tray_output $left
         colors {
             background #282A36
             statusline #F8F8F2
