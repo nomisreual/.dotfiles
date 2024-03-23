@@ -11,3 +11,6 @@ eval "$(zoxide init zsh)"
 
 # Starship
 eval "$(starship init zsh)"
+
+# zsh autocomplete
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
