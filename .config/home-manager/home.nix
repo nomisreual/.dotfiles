@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   # Allow unfree software:
   nixpkgs = {
@@ -46,6 +45,8 @@
     nodejs_21
     lazygit
     (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (import ./my-awesome-script.nix { inherit pkgs; })
+    (import ./python_setup/python_setup.nix { inherit pkgs; })
   ];
 
   # Enable home manager to manage fonts:
