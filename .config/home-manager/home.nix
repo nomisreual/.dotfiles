@@ -36,7 +36,6 @@
     slack
     _1password-gui
     thunderbird
-    poetry
     sqlite
     neofetch
     htop

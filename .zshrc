@@ -14,3 +14,6 @@ eval "$(starship init zsh)"
 
 # zsh autocomplete
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Created by `pipx` on 2024-03-25 12:34:55
+export PATH="$PATH:/home/simon/.local/bin"
