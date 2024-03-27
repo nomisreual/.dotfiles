@@ -190,6 +190,8 @@ return { -- LSP Configuration & Plugins
       'black', -- python formatting
       'prettier', -- for js, html, css
       'prettierd', -- faster prettier
+      'sql-formatter', -- for sql
+      'sqlfmt', -- for sql
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

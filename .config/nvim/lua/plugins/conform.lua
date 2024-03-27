@@ -14,6 +14,7 @@ return { -- Autoformat
       -- is found.
       -- javascript = { { "prettierd", "prettier" } },
       html = { { 'prettierd', 'prettier' } },
+      sql = { 'sqlfmt' },
     },
   },
 }

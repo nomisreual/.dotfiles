@@ -28,6 +28,7 @@ return { -- Autocompletion
     --    for various frameworks/libraries/etc. but you will have to
     --    set up the ones that are useful for you.
     -- 'rafamadriz/friendly-snippets',
+    'kristijanhusak/vim-dadbod-completion',
   },
   config = function()
     -- See `:help cmp`
@@ -86,6 +87,7 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'vim-dadbod-completion' },
       },
     }
   end,
