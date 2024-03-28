@@ -8,13 +8,16 @@ return { -- Autoformat
     },
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- python = { 'ruff' },
-      python = { 'isort', 'black' },
-      -- You can use a sub-list to tell conform to run *until* a formatter
-      -- is found.
-      -- javascript = { { "prettierd", "prettier" } },
+      python = function(bufnr)
+        if require('conform').get_formatter_info('ruff_format', bufnr).available then
+          return { 'ruff_format' }
+        else
+          return { 'isort', 'black' }
+        end
+      end,
+      javascript = { { 'prettierd', 'prettier' } },
       html = { { 'prettierd', 'prettier' } },
-      sql = { 'sqlfmt' },
+      sql = { 'sql_formatter' },
     },
   },
 }
