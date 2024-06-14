@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = simon.lauer@posteo.de
+	name = Simon Antonius Lauer
+[core]
+	editor = nvim
