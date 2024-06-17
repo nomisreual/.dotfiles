@@ -20,6 +20,7 @@ return { -- Autoformat
       -- html = { { 'prettierd', 'prettier' } },
       html = { 'djlint' },
       sql = { 'sql_formatter' },
+      cs = { 'csharpier' },
     },
   },
 }
