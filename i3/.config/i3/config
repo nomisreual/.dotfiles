@@ -1,21 +1,5 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 14
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# Font for window titles:
+font pango:FantasqueSansM Nerd Font 14
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -32,17 +16,27 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Polybar
+# Polybar: status-bar:
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Feh
+# Feh - wallpaper:
 exec_always --no-startup-id feh --bg-scale $HOME/Wallpapers/nice-blue-background.png
 
-# Xrandr
+# Xrandr - display settings:
 exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 --rate 165.00 --output DisplayPort-1 --mode 1920x1080 --rate 60.00
 
-# Redshift
+# Redshift - blue-light filter:
 exec_always --no-startup-id redshift
+
+# Set main modifier
+set $mainMod Mod4
+set $altMod Mod1
+
+# L D U R:
+set $left h
+set $down j
+set $up k
+set $right l
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -51,33 +45,28 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
-set $left h
-set $down j
-set $up k
-set $right l
+## Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mainMod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
 
-# Set main modifier
-set $mainMod Mod4
-set $altMod Mod1
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mainMod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
 
 # use Mouse+$mainMod to drag floating windows to their wanted position
 floating_modifier $mainMod
 
-# start a terminal
+# start a terminal (kitty):
 bindsym $mainMod+Return exec kitty
 
 # kill focused window
 bindsym $mainMod+Shift+q kill
 
-# start dmenu (a program launcher)
-# bindsym $mainMod+d exec --no-startup-id dmenu_run
-# A more modern dmenu replacement is rofi:
+# Rofi - launcher:
 bindsym $mainMod+d exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindsym $mainMod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mainMod+$left focus left
@@ -85,29 +74,17 @@ bindsym $mainMod+$down focus down
 bindsym $mainMod+$up focus up
 bindsym $mainMod+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mainMod+Left focus left
-bindsym $mainMod+Down focus down
-bindsym $mainMod+Up focus up
-bindsym $mainMod+Right focus right
-
 # move focused window
 bindsym $mainMod+Shift+$left move left
 bindsym $mainMod+Shift+$down move down
 bindsym $mainMod+Shift+$up move up
 bindsym $mainMod+Shift+$right move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mainMod+Shift+Left move left
-bindsym $mainMod+Shift+Down move down
-bindsym $mainMod+Shift+Up move up
-bindsym $mainMod+Shift+Right move right
-
 # split in horizontal orientation
 bindsym $altMod +h split h
 
 # split in vertical orientation
-bindsym $mainMod+v split v
+bindsym $altMod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mainMod+f fullscreen toggle
@@ -124,10 +101,10 @@ bindsym $mainMod+Shift+space floating toggle
 bindsym $mainMod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mainMod+a focus parent
+bindsym $altMod+a focus parent
 
 # focus the child container
-#bindsym $mainMod+d focus child
+bindsym $altMod+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mainMod+Shift+minus move scratchpad
@@ -175,29 +152,19 @@ bindsym $mainMod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mainMod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mainMod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mainMod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mainMod+r
         bindsym Return mode "default"
