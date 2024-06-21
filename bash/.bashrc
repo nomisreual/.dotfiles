@@ -141,3 +141,9 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Nerdfetch
 nerdfetch
+
+# Fuzzy finder
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Zoxide
+eval "$(zoxide init bash --cmd cd)"
