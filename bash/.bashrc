@@ -147,3 +147,9 @@ nerdfetch
 
 # Zoxide
 eval "$(zoxide init bash --cmd cd)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# AWS
+export AWS_CONFIG_FILE=$HOME/.config/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
