@@ -29,7 +29,7 @@ exec_always --no-startup-id feh --bg-scale $HOME/Wallpapers/nice-blue-background
 exec_always --no-startup-id xrandr --output DisplayPort-0 --primary --mode 1920x1080 --rate 165.00 --output DisplayPort-1 --mode 1920x1080 --rate 60.00
 
 # Redshift - blue-light filter:
-exec_always --no-startup-id redshift
+exec --no-startup-id redshift
 
 # Set main modifier
 set $mainMod Mod4
@@ -135,17 +135,17 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Assign workspaces to displays:
-workspace $ws1 output $monitorLeft
-workspace $ws2 output $monitorLeft
-workspace $ws3 output $monitorLeft
-workspace $ws4 output $monitorLeft
-workspace $ws5 output $monitorLeft
+workspace $ws1 output DisplayPort-0
+workspace $ws2 output DisplayPort-0
+workspace $ws3 output DisplayPort-0
+workspace $ws4 output DisplayPort-0
+workspace $ws5 output DisplayPort-0
 #
-workspace $ws6 output $monitorLeft
-workspace $ws7 output $monitorLeft
-workspace $ws8 output $monitorLeft
-workspace $ws9 output $monitorLeft
-workspace $ws10 output $monitorLeft
+workspace $ws6 output DisplayPort-1
+workspace $ws7 output DisplayPort-1
+workspace $ws8 output DisplayPort-1
+workspace $ws9 output DisplayPort-1
+workspace $ws10 output DisplayPort-1
 
 # switch to workspace
 bindsym $mainMod+1 workspace number $ws1
