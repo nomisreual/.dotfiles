@@ -135,24 +135,28 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.local/bin:$PATH"
 . "$HOME/.cargo/env"
 
-# usr/local
+# Go
 export PATH=$PATH:/usr/local/go/bin
 
 
-# Nerdfetch
-nerdfetch
 
 # fzf - Fuzzy finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-#
+
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
 # Zoxide
 eval "$(zoxide init bash --cmd cd)"
 
+# Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # AWS
 export AWS_CONFIG_FILE=$HOME/.config/aws/config
 export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
+
+[ -f "/home/simon/.ghcup/env" ] && . "/home/simon/.ghcup/env" # ghcup-env
+
+# Nerdfetch
+nerdfetch
