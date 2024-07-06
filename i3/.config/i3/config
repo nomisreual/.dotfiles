@@ -74,7 +74,8 @@ bindsym $mainMod+Return exec kitty
 bindsym $mainMod+Shift+q kill
 
 # Rofi - launcher:
-bindsym $mainMod+d exec "rofi -modi drun,run -show drun"
+bindsym $mainMod+d exec "rofi -modi drun -show drun"
+bindsym $mainMod+Tab exec "rofi -modi window -show window"
 
 # change focus
 bindsym $mainMod+$left focus left
@@ -106,7 +107,7 @@ bindsym $mainMod+e layout toggle split
 bindsym $mainMod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mainMod+space focus mode_toggle
+# bindsym $mainMod+space focus mode_toggle
 
 # focus the parent container
 bindsym $altMod+a focus parent
