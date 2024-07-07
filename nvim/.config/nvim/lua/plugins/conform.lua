@@ -18,7 +18,7 @@ return { -- Autoformat
       end,
       javascript = { { 'prettierd', 'prettier' } },
       -- html = { { 'prettierd', 'prettier' } },
-      html = { 'djlint' },
+      htmldjango = { 'djlint' },
       sql = { 'sql_formatter' },
       cs = { 'csharpier' },
     },
