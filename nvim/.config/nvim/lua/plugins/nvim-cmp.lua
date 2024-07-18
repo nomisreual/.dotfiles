@@ -86,7 +86,7 @@ return { -- Autocompletion
       },
       sources = {
         { name = 'nvim_lsp' },
-        { name = 'copilot' },
+        -- { name = 'copilot' },
         { name = 'luasnip' },
         { name = 'path' },
         { name = 'vim-dadbod-completion' },

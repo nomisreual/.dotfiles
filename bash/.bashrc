@@ -160,3 +160,10 @@ export AWS_SHARED_CREDENTIALS_FILE=$HOME/.config/aws/credentials
 
 # Nerdfetch
 nerdfetch
+
+# Servers:
+alias box="ssh boxuser@134.122.93.78"
+alias boxsftp="sftp boxuser@134.122.93.78"
+
+export MODULAR_HOME="/home/simon/.modular"
+export PATH="/home/simon/.modular/pkg/packages.modular.com_max/bin:$PATH"
