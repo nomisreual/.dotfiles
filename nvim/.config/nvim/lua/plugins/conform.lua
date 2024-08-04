@@ -21,6 +21,7 @@ return { -- Autoformat
       htmldjango = { 'djlint' },
       sql = { 'sql_formatter' },
       cs = { 'csharpier' },
+      go = { 'goimports', 'gofumpt' },
     },
   },
 }

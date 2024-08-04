@@ -235,11 +235,13 @@ return { -- LSP Configuration & Plugins
       'stylua', -- Used to format lua code
       'isort', -- python import ordering
       'black', -- python formatting
-      'ruff',
+      'ruff', -- python linter and formatter
       'prettier', -- for js, html, css
       'prettierd', -- faster prettier
-      'sql-formatter',
-      'djlint',
+      'sql-formatter', -- sql duh
+      'djlint', -- for django templates
+      'gofumpt', -- go formatter
+      'goimports', -- go import cleaning
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
